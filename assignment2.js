@@ -122,7 +122,24 @@ Array.prototype.myPush = function (...args) {
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function () {};
+Array.prototype.myLastIndexOf = function (searchElement, fromIndex) {
+    if(fromIndex >= 0){//pos
+        if(fromIndex >= this.length)
+            return -1
+    }else{//neg
+        fromIndex = this.length + fromIndex;
+        if(fromIndex < 0)
+            return -1;
+    }
+    
+    for(let i = this.length-1; i > fromIndex; i--){
+        if(this[fromIndex]===undefined)
+            continue;
+        if(this[fromIndex]===searchElement)
+            return fromIndex;
+    }
+    return -1;
+};
 
 // KEYS //
 Object.grabKeys = function () {};
