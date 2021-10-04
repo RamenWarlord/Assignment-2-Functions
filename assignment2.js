@@ -86,7 +86,28 @@ Array.prototype.myIncludes = function (searchElement, fromIndex) {
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function () {};
+Array.prototype.myIndexOf = function (searchElement, fromIndex) {
+    if(fromIndex < 0){//negative
+        fromIndex = -fromIndex;//positive of
+        if(fromIndex >= this.length)//if bigger
+            fromIndex = 0;
+    }else{//positive
+        if(fromIndex >= this.length)//bigger
+            return -1;
+    }
+
+    while(fromIndex < this.length){
+        if(this[fromIndex]===undefined) {
+            fromIndex++;
+            continue;
+        }
+
+        if(this[fromIndex] === searchElement)
+            return fromIndex;
+        fromIndex++;
+    }
+    return -1;
+};
 
 // PUSH //
 Array.prototype.myPush = function () {};
