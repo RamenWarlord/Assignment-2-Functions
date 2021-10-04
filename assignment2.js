@@ -1,12 +1,19 @@
 // FOR EACH //
-Array.prototype.myEach = function (arr) {
-  for (i = 0; i < arr.length; i++) {
-    alert(arr[i]);
-  }
+Array.prototype.myEach = function (callbackFn) {
+  for (let i = 0; i < this.length; i++) {
+    if(this[i]===undefined) continue;
+    //element, index, array
+    callbackFn(this[i], i, this);
 };
 
 // MAP //
-Array.prototype.myMap = function () {};
+Array.prototype.myMap = function (callbackFn) {
+    let arr = [...this];
+    for(let i = 0; i < this.length; i++){
+        if(this[i]===undefined) continue;
+        arr[i] = callbackFn(this[i], i, this);
+    }
+};
 
 // FILTER //
 Array.prototype.myFilter = function () {};
