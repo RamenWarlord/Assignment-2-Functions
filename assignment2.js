@@ -58,13 +58,32 @@ Array.prototype.myReduce = function (callbackFn, initVal) {
     }
     for(let i = 0; i < this.length; i++){
         if(this[i]===undefined) continue;
-        num = numcallbackFn(num, this[i]);
+        num = callbackFn(num, this[i]);
     }
     return num;
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function () {};
+Array.prototype.myIncludes = function (searchElement, fromIndex) {
+    let i = 0;
+    if(fromIndex < 0){
+        i = this.length + fromIndex;
+        if(i < 0)
+            i = 0;
+    }else{
+        i = fromIndex;
+    }
+    while(i < this.length){
+        if(this[i]===undefined) {
+            i++;
+            continue;
+        }
+        if(this[i] === searchElement)
+            return true;
+        i++;
+    }
+    return false;
+};
 
 // INDEXOF //
 Array.prototype.myIndexOf = function () {};
