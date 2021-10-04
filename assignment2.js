@@ -142,7 +142,13 @@ Array.prototype.myLastIndexOf = function (searchElement, fromIndex) {
 };
 
 // KEYS //
-Object.grabKeys = function () {};
+Object.grabKeys = function (obj) {
+    let keys = []
+    for(var key in obj){
+        keys.push(key);
+    }
+    return key;
+};
 
 // VALUES //
 Object.grabValues = function () {};
