@@ -1,5 +1,9 @@
 // FOR EACH //
-Array.prototype.myEach = function () {};
+Array.prototype.myEach = function (arr) {
+  for (i = 0; i < arr.length; i++) {
+    alert(arr[i]);
+  }
+};
 
 // MAP //
 Array.prototype.myMap = function () {};
